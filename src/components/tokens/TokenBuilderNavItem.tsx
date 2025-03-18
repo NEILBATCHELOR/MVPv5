@@ -1,3 +1,4 @@
+// src/components/tokens/TokenBuilderNavItem.tsx
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -13,8 +14,6 @@ const TokenBuilderNavItem: React.FC<TokenBuilderNavItemProps> = ({
   active,
 }) => {
   const { projectId: paramProjectId } = useParams<{ projectId: string }>();
-
-  // Use projectId from props or from URL params
   const currentProjectId = propProjectId || paramProjectId;
 
   return (
@@ -22,9 +21,7 @@ const TokenBuilderNavItem: React.FC<TokenBuilderNavItemProps> = ({
       to={`/projects/${currentProjectId}/tokens`}
       className={cn(
         "flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-primary/10",
-        active
-          ? "bg-primary/10 text-primary font-medium"
-          : "text-muted-foreground",
+        active ? "bg-blue-100 text-blue-600 font-medium" : "text-gray-600",
       )}
     >
       <Coins className="h-4 w-4" />
